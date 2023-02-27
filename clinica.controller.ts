@@ -12,16 +12,4 @@ export class ClinicaController {
     return this.clinicaService.getCPF(cpf);
   }
 
-   /*
-  @Get(':cpf')
-  getOk(@Param('cpf') cpf: number) {
-    return this.clinicaService.getOk(cpf);
-  }
-  */
-
-  @Get(':cpf')
-  getCPF1(@Param('cpf') cpf: number) {
-    return this.clinicaService.getCPF1(cpf);
-  }
-
 }

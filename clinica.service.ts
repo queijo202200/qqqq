@@ -4,7 +4,7 @@ import { logErroResponse } from './errorResponseUtil';
 
 @Injectable()
 export class Constantes {
-  Autorizacao = 'f8deal91-6dhd-48sc-a7de-3267ff77d27';
+  Autorizacao = 'fdeal91-6dhd-48sc-a7de-3267ff77d27';
 }
 
 @Injectable()
@@ -48,24 +48,5 @@ export class ClinicaService extends Constantes {
   }
   async getOk(cpf) {
     return {cpf};
-  }
-
-  async getCPF1(cpf) {
-    const response = await axios
-      .get(
-        `https://api-evo-integration.azurewebsites.net/asc/api/individuos/find?cpf=${cpf}`,
-        {
-          headers: {
-            Authorization: 'f8deal91-6dhd-48sc-a7de-3267ff77d27',
-            'Content-Type': 'application/json',
-          },
-        },
-      )
-      .catch(logErroResponse);
-
-    if (response) {
-      const finalResponse = response.data;
-      return 'resultado: ' + finalResponse;
-    }
   }
 }
